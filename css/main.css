@@ -5,7 +5,6 @@
   --section-padding:80px 0;
   --small-section-padding:50px 0;
   --over-lay:rgba(0, 0, 0, .7);
-  --spacial-font:"Oswald" , "sans-serif";
 }
 html{
   scroll-behavior: smooth;
@@ -20,7 +19,7 @@ html{
   line-height: 1.5;
 }
 body{
-  font-family:"sans-serif"; 
+  font-family:"open sans","sans-serif"; 
 }
 button{
   cursor: pointer;
