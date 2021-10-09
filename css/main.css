@@ -90,6 +90,7 @@ body{
 /* End Side heading */
 /* start special button */
 .special-button{
+  border-radius: 0;
   outline: 4px solid var(--main-color);
   transition: 250ms ease-out;
   outline-offset: -5px;
