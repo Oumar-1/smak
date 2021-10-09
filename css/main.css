@@ -19,9 +19,9 @@ html{
   line-height: 1.5;
 }
 body{
-  font-family:'Open sans',sans-serif; 
+  font-family:'Open sans', sans-serif; 
 }
-button{
+  button{
   cursor: pointer;
 }
 .container{
@@ -42,7 +42,7 @@ button{
 }
 .main-heading h2{
   position: relative;
-  font-size: 30px;
+  font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 20px;
   padding: 20px 0;
@@ -59,12 +59,12 @@ button{
 }
 .main-heading p:first-child{
   color: var(--side-color);
-  color: var(--side-color);
   text-transform: uppercase;
   font-size: 16px;
 }
 .main-heading p:last-child{
   color: var(--side-color);
+  font-size: 1.15em;
   max-width: 900px;
   margin:0 auto;
   line-height: 1.5;
@@ -81,9 +81,11 @@ button{
 .side-heading h3 {
   text-transform: uppercase;
   margin-bottom: 10px;
+  font-size:1.5em;
 }
 .side-heading p{
   line-height: 1.5;
+  font-size: 1.1em;
 }
 /* End Side heading */
 /* start special button */
@@ -308,11 +310,12 @@ header .container .dotted span{
   text-shadow: 2px 1px mediumvioletred
 }
 .services .boxes-container .box .text h3{
-  font-size: 16px;
+  font-size: 1.3em;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
 .services .boxes-container .box .text p{
+  font-size: 1.15em;
   max-width: 201px;
   margin: 0 auto;
   color: var(--side-color);
@@ -321,11 +324,19 @@ header .container .dotted span{
 /* start How works */
 
 .how-works{
+  background-color: purple;
   background-image: url(../images/how-works-bg.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
   margin-top: 80px;
+  --over-lay: rgba(0 0 0 / .5);
+}
+@media (max-width:411px) {
+  .how-works{
+    background-image: url(../images/how-works-bg-mob.jpg);
+  }
+  
 }
 .how-works::before{
   content: '';
@@ -334,7 +345,7 @@ header .container .dotted span{
   position:absolute;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: var(--over-lay);
   
 }
 .how-works .container{
@@ -611,9 +622,8 @@ header .container .dotted span{
   font-weight: normal;
 }
 .about .container .content .box .text h5{
-  font-size: 16px;
-  font-weight: normal;
-  font-family: var(--spacial-font);
+  font-size: 1.2em;
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -627,10 +637,9 @@ header .container .dotted span{
   color: black;
 }
 .team .team-heading h3{
-  font-size: 35px;
+  font-size: 2.2rem;
   letter-spacing: 2px;
-  font-family: var(--spacial-font);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0;
 }
 .team .team-heading p{
@@ -747,7 +756,8 @@ header .container .dotted span{
   justify-content: center;
 }
 .skills .container .content .box .text p:first-of-type{
-  font-size: 30px;
+  font-size: 2em;
+  font-weight: bold;
 }
 .skills .container .content .box .text p:last-of-type{
   position: absolute;
