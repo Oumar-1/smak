@@ -993,10 +993,12 @@ footer .social i:nth-of-type(2):hover{
 footer .social i:last-of-type:hover{
   background-color: red;
 }
-footer > button {
+footer > a {
   margin-top: 10px;
   text-align: center;
   padding: 25px;
+  display: inline-block;
+  cursor: pointer;
   color: white;
   font-size: 25px;
   border: none;
@@ -1004,27 +1006,25 @@ footer > button {
   position: relative;
   overflow: hidden;
 }
-footer > button i{
+footer > a i{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50% , -50%);
   transition:250ms linear;
 }
-footer > button i.first{
-}
-footer > button i.second{
+footer > a i.second{
   top: 60px;
 }
-footer > button i.third{
+footer > a i.third{
   top: 100px ;
 }
-footer > button i.fourth{
+footer > a i.fourth{
   top: 140px;
 }
-footer > button:hover i{
+footer > a:hover i{
   top: -40px;
 }
-footer > button:hover i.fourth{
+footer > a:hover i.fourth{
   top: 50% ;
 }
