@@ -121,6 +121,7 @@ header {
   width: 100%;
   padding: 10px 0;
   z-index: 10;
+  user-select: none;
 }
 header .container {
   display: flex;
@@ -136,9 +137,25 @@ header .links-container {
   flex-grow: 1;
   text-align: end;
 }
+
+header .links-container.show {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 65px;
+  background-color: var(--over-lay);
+  width: 100%;
+  text-align: start;
+  padding-top: 20px;
+  padding-left: 30px;
+}
 @media (max-width: 767px) {
   header .links-container {
     display: none;
+  }
+  header .links-container.show .header-links {
+    display: block;
+    margin-bottom: 30px;
   }
 }
 header .header-links {
@@ -163,6 +180,7 @@ header .header-links.active::before {
   position: absolute;
   left: -15px;
   top: 50%;
+  border-radius: 50%;
   transform: translateY(-50%);
 }
 header .burger-shape {
@@ -172,29 +190,18 @@ header .burger-shape {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
+  position: relative;
+}
+header .burger-shape p {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 100%;
+  left: 0;
 }
 @media (min-width: 768px) {
   header .burger-shape {
     display: none;
-  }
-}
-@media (max-width: 767px) {
-  header .burger-shape:hover + .links-container,
-  header .links-container.show {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 65px;
-    background-color: var(--over-lay);
-    width: 100%;
-    text-align: start;
-    padding-top: 20px;
-    padding-left: 30px;
-  }
-  header .burger-shape:hover + ul li,
-  header .links-container.show .header-links {
-    display: block;
-    margin-bottom: 30px;
   }
 }
 header .burger-shape span {
@@ -222,23 +229,36 @@ header .burger-shape span {
   color: white;
   position: relative;
 }
-.landing .container .content h2 {
+.landing .container .content {
+  min-height: 200px;
+}
+.landing .container .content [data-head-quote] {
   max-width: 800px;
   margin: 0 auto 50px;
-  font-size: 50px;
+  padding: 0 45px;
+  overflow: hidden;
+  font-size: 3.2rem;
   text-transform: uppercase;
   line-height: 1.4;
 }
-@media (max-width: 360px) {
-  .landing .container .content h2 {
-    font-size: 40px;
+@media (max-width: 700px) {
+  .landing .container .content [data-head-quote] {
+    font-size: 2.3rem;
+    padding: 0;
+  }
+  .landing .container .content {
+    min-height: 150px;
   }
 }
-.landing .container .content button {
+.landing .container .content [data-copy-quote] {
   border: none;
   background-color: var(--main-color);
   padding: 10px 30px;
-  position: relative;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  user-select: none;
 }
 .landing .container .content > i:first-of-type,
 .landing .container .content > i:last-of-type {
@@ -253,7 +273,7 @@ header .burger-shape span {
 .landing .container:hover .content > i {
   display: block;
 }
-@media (max-width: 767px) {
+@media (max-width: 411px) {
   .landing .container .content > i {
     display: none;
   }

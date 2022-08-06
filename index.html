@@ -21,36 +21,51 @@
   </head>
   <body>
     <!-- Start heading -->
-    <header>
+    <header class="ignore-section">
       <div class="container">
         <a href="#"><img src="images/logo.png" alt="" /></a>
         <div class="burger-shape" id="burger-shape">
           <span></span>
           <span></span>
           <span></span>
+          <p></p>
         </div>
         <ul class="links-container" id="section-links-container">
-          <li class="header-links active"><a href="#home">Home</a></li>
-          <li class="header-links"><a href="#service">Services</a></li>
-          <li class="header-links"><a href="#portfolio">Portfolio</a></li>
-          <li class="header-links"><a href="#about">About</a></li>
-          <li class="header-links"><a href="#clients">Clients</a></li>
-          <li class="header-links"><a href="#contact">Contact</a></li>
+          <li class="header-links active" data-section-link="home">
+            <a href="#home">Home</a>
+          </li>
+          <li class="header-links" data-section-link="services">
+            <a href="#services">Services</a>
+          </li>
+          <li class="header-links" data-section-link="portfolio">
+            <a href="#portfolio">Portfolio</a>
+          </li>
+          <li class="header-links" data-section-link="about">
+            <a href="#about">About</a>
+          </li>
+          <li class="header-links" data-section-link="clients">
+            <a href="#clients">Clients</a>
+          </li>
+          <li class="header-links" data-section-link="contact">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </header>
     <!-- End heading -->
     <!-- start Landing page  -->
-    <div class="landing" id="home">
+    <div class="landing" id="home" data-section>
       <div class="container">
         <div class="content">
-          <h2>branding have another definition</h2>
-          <button class="special-button">Get it</button>
-          <i class="fas fa-chevron-right"></i>
-          <i class="fas fa-chevron-left"></i>
+          <h2 class="center-quote" data-head-quote>
+            branding have another definition
+          </h2>
+          <button class="special-button" data-copy-quote>Get it</button>
+          <i class="fas fa-chevron-right" data-next-quote></i>
+          <i class="fas fa-chevron-left" data-previous-quote></i>
         </div>
       </div>
-      <a class="scrool-shape" href="#service">
+      <a class="scrool-shape" href="#services">
         <i class="fas fa-angle-double-down"></i>
         <i class="fas fa-angle-double-down"></i>
         <i class="fas fa-angle-double-down"></i>
@@ -58,7 +73,7 @@
     </div>
     <!-- End Landing page  -->
     <!-- Start servcies -->
-    <div class="services" id="service">
+    <div class="services" id="services" data-section>
       <div class="main-heading">
         <p>our services</p>
         <h2>what we love to do</h2>
@@ -171,7 +186,7 @@
     </div>
     <!-- end how works  -->
     <!-- start references -->
-    <div class="references" id="portfolio">
+    <div class="references" id="portfolio" data-section>
       <div class="container">
         <div class="main-heading">
           <p>our references</p>
@@ -290,7 +305,7 @@
     </div>
     <!-- end references -->
     <!-- Start Achivments-->
-    <div class="achivment" id="achivment">
+    <div class="achivment">
       <div class="container">
         <div class="side-heading">
           <h3>we are proud of these numbers</h3>
@@ -321,7 +336,7 @@
     </div>
     <!-- End Achivments-->
     <!-- start about us -->
-    <div class="about" id="about">
+    <div class="about" id="about" data-section>
       <div class="container">
         <div class="main-heading">
           <p>about us</p>
@@ -477,7 +492,7 @@
     </div>
     <!-- End skills-->
     <!-- start clients -->
-    <div class="clients" id="clients">
+    <div class="clients" id="clients" data-section>
       <div class="container">
         <div class="main-heading">
           <p>our clients</p>
@@ -533,7 +548,7 @@
     </div>
     <!-- end quote -->
     <!-- start contact -->
-    <div class="contact" id="contact">
+    <div class="contact" id="contact" data-section>
       <div class="conainer">
         <div class="main-heading">
           <p>contact us</p>
@@ -613,6 +628,6 @@
     <!-- end footer -->
 
     <!-- JS Files-->
-    <script src="JS/main.js"></script>
+    <script src="JS/main.js" defer type="module"></script>
   </body>
 </html>
