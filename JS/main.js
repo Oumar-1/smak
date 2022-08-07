@@ -5,6 +5,7 @@ const sections = [...h_Functions.getByDataAll("section")];
 const sectionsLinks = [
   ...h_Functions.getById("section-links-container").children,
 ];
+const navBar = h_Functions.getByData("nav-bar");
 const burgerMenu = h_Functions.getById("burger-shape");
 
 // toggle show menu
@@ -13,6 +14,12 @@ burgerMenu.onclick = () => {
 };
 burgerMenu.children[3].addEventListener("mouseenter", () => {
   sectionsLinks[0].parentElement.classList.add("show");
+});
+sectionsLinks.forEach((e) => {
+  e.addEventListener("click", () => {
+    h_Functions.activeThis(sectionsLinks, e, "active");
+    e.parentElement.classList.remove("show");
+  });
 });
 
 // active menu depend on which section you on
@@ -23,24 +30,20 @@ function activeMenu() {
       position >= section.offsetTop &&
       position < section.offsetTop + section.offsetHeight
     ) {
-      sectionsLinks.forEach((link) => {
-        link.classList.remove("active");
-      });
-      h_Functions
-        .getByData(`section-link=${section.id}`)
-        .classList.add("active");
+      let currentLink = h_Functions.getByData(`section-link=${section.id}`);
+      if (currentLink.classList.contains("active")) return;
+      h_Functions.activeThis(sectionsLinks, currentLink, "active");
     }
   });
 }
-activeMenu();
-window.onscroll = activeMenu;
 
 // update quote on each one
 let quotesArray = [];
 let currentQuote = 0;
 const quoteHolder = h_Functions.getByData("head-quote");
 const copyTheQuote = h_Functions.getByData("copy-quote");
-h_Functions.getByData("next-quote").onclick = nextQuote;
+const nextQuoteBtn = h_Functions.getByData("next-quote");
+nextQuoteBtn.onclick = nextQuote;
 h_Functions.getByData("previous-quote").onclick = previousQuote;
 
 function getQuote() {
@@ -62,14 +65,22 @@ function getQuote() {
     });
 }
 async function nextQuote() {
-  if (quotesArray[currentQuote] === undefined) {
+  if (currentQuote >= quotesArray.length - 1) {
+    // prevent multiple clickes
+    nextQuoteBtn.style.cursor = "wait";
+    nextQuoteBtn.style.pointerEvents = "none";
     await getQuote();
-    quoteHolder.textContent = quotesArray[currentQuote];
-    currentQuote++;
+    nextQuote();
     return;
   }
-  currentQuote++;
-  quoteHolder.textContent = quotesArray[currentQuote];
+  // reduce amount of quotes you can store in the array
+  if (quotesArray.length > 4) {
+    currentQuote--;
+    quotesArray.splice(0, 1);
+  }
+  quoteHolder.textContent = quotesArray[++currentQuote];
+  nextQuoteBtn.style.pointerEvents = "all";
+  nextQuoteBtn.style.cursor = "pointer";
 }
 
 function previousQuote() {
@@ -78,9 +89,54 @@ function previousQuote() {
   quoteHolder.textContent = quotesArray[currentQuote];
 }
 
+// copy the current quote and make some
 copyTheQuote.addEventListener("click", () => {
-  console.log("clicked");
   let copyText = quoteHolder.textContent;
   navigator.clipboard.writeText(copyText);
-  alert("copied" + copyText);
+
+  // some styling
+  let spans = copyTheQuote.children;
+  spans[0].classList.add("hide");
+  spans[1].classList.remove("hide");
+  copyTheQuote.style.setProperty("--main-color", "white");
+  setTimeout(() => {
+    copyTheQuote.style.removeProperty("--main-color");
+    spans[0].classList.remove("hide");
+    spans[1].classList.add("hide");
+  }, 1000);
+});
+
+// shrink nav bar
+function shrinkNav(element) {
+  if (window.scrollY <= 10) {
+    element.classList.add("shrink");
+    return;
+  }
+  if (!element.classList.contains("shrink")) return;
+  element.classList.remove("shrink");
+}
+
+// filter portfolio using catagory
+
+const portfolioCatagories = h_Functions.getByDataAll("portfolio-filter");
+portfolioCatagories.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    h_Functions.activeThis(portfolioCatagories, filter, "active");
+    filterPortfolio(filter);
+  });
+});
+function filterPortfolio(current) {
+  let works = h_Functions.getByData("my-works").children;
+  [...works].forEach((item) => {
+    if (item.classList.contains(current.dataset.portfolioFilter)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+// all on scroll functions
+window.addEventListener("scroll", () => {
+  shrinkNav(navBar);
+  activeMenu();
 });

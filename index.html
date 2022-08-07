@@ -22,7 +22,7 @@
   <body>
     <!-- Start heading -->
     <header class="ignore-section">
-      <div class="container">
+      <div class="container" data-nav-bar>
         <a href="#"><img src="images/logo.png" alt="" /></a>
         <div class="burger-shape" id="burger-shape">
           <span></span>
@@ -60,7 +60,10 @@
           <h2 class="center-quote" data-head-quote>
             branding have another definition
           </h2>
-          <button class="special-button" data-copy-quote>Get it</button>
+          <button class="special-button" data-copy-quote>
+            <span>Get it</span>
+            <span class="hide">Done</span>
+          </button>
           <i class="fas fa-chevron-right" data-next-quote></i>
           <i class="fas fa-chevron-left" data-previous-quote></i>
         </div>
@@ -186,7 +189,7 @@
     </div>
     <!-- end how works  -->
     <!-- start references -->
-    <div class="references" id="portfolio" data-section>
+    <div class="portfolio" id="portfolio" data-section>
       <div class="container">
         <div class="main-heading">
           <p>our references</p>
@@ -198,109 +201,121 @@
             disappears; where you basically have to admit you never learn it.
           </p>
         </div>
-        <div class="content-container">
+        <div class="content">
           <ul class="catagories">
-            <li><a class="active" href="#">all</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">graphic design</a></li>
-            <li><a href="#">photography</a></li>
-            <li><a href="#">illustration</a></li>
+            <li class="active" data-portfolio-filter="all">
+              <p class="title">all</p>
+            </li>
+            <li class="" data-portfolio-filter="web-design">
+              <p class="title">web design</p>
+            </li>
+            <li data-portfolio-filter="graphic-design">
+              <p class="title">graphic design</p>
+            </li>
+            <li data-portfolio-filter="photography">
+              <p class="title">photography</p>
+            </li>
+            <li data-portfolio-filter="illustration">
+              <p class="title">illustration</p>
+            </li>
           </ul>
-        </div>
-      </div>
-      <div class="images-container">
-        <div class="box">
-          <img src="images/media-1.jpg" alt="" />
-          <div class="text">
-            <h3>moderno</h3>
-            <p>psd</p>
+          <div class="images-container" data-my-works>
+            <div class="box all web-design">
+              <img src="images/media-1.jpg" alt="" />
+              <div class="text">
+                <h3>moderno</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all web-design">
+              <img src="images/media-2.jpg" alt="" />
+              <div class="text">
+                <h3>app screen show case</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all web-design">
+              <img src="images/media-3.jpg" alt="" />
+              <div class="text">
+                <h3>molly</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all illustration">
+              <img src="images/media-4.png" alt="" />
+              <div class="text">
+                <h3>workspace elements</h3>
+                <p>al/psd</p>
+              </div>
+            </div>
+            <div class="box all photography">
+              <img src="images/media-5.png" alt="" />
+              <div class="text">
+                <h3>vintige logo insignias</h3>
+                <p>ai/esp</p>
+              </div>
+            </div>
+            <div class="box all graphic-design">
+              <img src="images/media-6.png" alt="" />
+              <div class="text">
+                <h3>retro vetor badges</h3>
+                <p>ai</p>
+              </div>
+            </div>
+            <div class="box all web-design">
+              <img src="images/media-7.png" alt="" />
+              <div class="text">
+                <h3>mentum</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all illustration">
+              <img src="images/media-8.png" alt="" />
+              <div class="text">
+                <h3>flat brower mockup</h3>
+                <p>ai/psd</p>
+              </div>
+            </div>
+            <div class="box all graphic-design">
+              <img src="images/media-9.jpg" alt="" />
+              <div class="text">
+                <h3>flying busniess cards</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all graphic-design">
+              <img src="images/media-10.jpg" alt="" />
+              <div class="text">
+                <h3>try fold brochure</h3>
+                <p>psd</p>
+              </div>
+            </div>
+            <div class="box all photography">
+              <img src="images/media-11.png" alt="" />
+              <div class="text">
+                <h3>iphone 6 mockup</h3>
+                <p>ai/psd</p>
+              </div>
+            </div>
+            <div class="box all illustration">
+              <img src="images/media-12.png" alt="" />
+              <div class="text">
+                <h3>large poster mockup</h3>
+                <p>psd</p>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-contact">
+            <h3>do you like our Portfolio?</h3>
+            <p>
+              If I’d asked people what they wanted, they would say a faster
+              horse.
+            </p>
+            <button class="special-button">
+              <a href="#contact">contact us</a>
+            </button>
           </div>
         </div>
-        <div class="box">
-          <img src="images/media-2.jpg" alt="" />
-          <div class="text">
-            <h3>app screen show case</h3>
-            <p>psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-3.jpg" alt="" />
-          <div class="text">
-            <h3>molly</h3>
-            <p>psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-4.png" alt="" />
-          <div class="text">
-            <h3>workspace elements</h3>
-            <p>al/psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-5.png" alt="" />
-          <div class="text">
-            <h3>vintige logo insignias</h3>
-            <p>ai/esp</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-6.png" alt="" />
-          <div class="text">
-            <h3>retro vetor badges</h3>
-            <p>ai</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-7.png" alt="" />
-          <div class="text">
-            <h3>mentum</h3>
-            <p>psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-8.png" alt="" />
-          <div class="text">
-            <h3>flat brower mockup</h3>
-            <p>ai/psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-9.jpg" alt="" />
-          <div class="text">
-            <h3>flying busniess cards</h3>
-            <p>psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-10.jpg" alt="" />
-          <div class="text">
-            <h3>try fold brochure</h3>
-            <p>psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-11.png" alt="" />
-          <div class="text">
-            <h3>iphone 6 mockup</h3>
-            <p>ai/psd</p>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/media-12.png" alt="" />
-          <div class="text">
-            <h3>large poster mockup</h3>
-            <p>psd</p>
-          </div>
-        </div>
-      </div>
-      <div class="references-contact">
-        <h3>do you like our Portfolio?</h3>
-        <p>
-          If I’d asked people what they wanted, they would have said a faster
-          horse.
-        </p>
-        <button class="special-button">contact us</button>
       </div>
     </div>
     <!-- end references -->
@@ -447,45 +462,21 @@
           </p>
         </div>
         <div class="content">
-          <div class="box" style="--percent: 90">
-            <svg>
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-            </svg>
-            <div class="text">
-              <p>90%</p>
-              <p>html&css</p>
-            </div>
+          <div class="skill" style="--percent: 90">
+            <p class="title">html & css</p>
+            <div class="shape" data-skill-progress="90%"><span></span></div>
           </div>
-          <div class="box" style="--percent: 96">
-            <svg>
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-            </svg>
-            <div class="text">
-              <p>96%</p>
-              <p>ai&ps</p>
-            </div>
+          <div class="skill" style="--percent: 96">
+            <p class="title">ai & ps</p>
+            <div class="shape" data-skill-progress="90%"><span></span></div>
           </div>
-          <div class="box" style="--percent: 86">
-            <svg>
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-            </svg>
-            <div class="text">
-              <p>86%</p>
-              <p>js</p>
-            </div>
+          <div class="skill" style="--percent: 86">
+            <p class="title">js</p>
+            <div class="shape" data-skill-progress="86%"><span></span></div>
           </div>
-          <div class="box" style="--percent: 94">
-            <svg>
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-              <circle class="progress-circ" r="70" cx="50%" cy="50%" />
-            </svg>
-            <div class="text">
-              <p>94%</p>
-              <p>photography</p>
-            </div>
+          <div class="skill" style="--percent: 94">
+            <p class="title">photography</p>
+            <div class="shape" data-skill-progress="94%"><span></span></div>
           </div>
         </div>
       </div>
@@ -503,30 +494,28 @@
             business world of the importance of design in our everyday lives.
           </p>
         </div>
-        <ul>
-          <li>
-            <a href=""><img src="images/client-1.png" alt="" /></a>
-          </li>
-          <li>
-            <a href=""><img src="images/client-2.png" alt="" /></a>
-          </li>
-          <li>
-            <a href=""><img src="images/client-3.png" alt="" /></a>
-          </li>
-          <li>
-            <a href=""><img src="images/client-4.png" alt="" /></a>
-          </li>
-          <li>
-            <a href=""><img src="images/client-5.png" alt="" /></a>
-          </li>
-          <li>
-            <a href=""><img src="images/client-6.png" alt="" /></a>
-          </li>
-          <li class="mover">
-            <i class="fas fa-angle-double-left left"></i>
-            <i class="fas fa-angle-double-right right"></i>
-          </li>
-        </ul>
+        <div class="content">
+          <ul>
+            <li>
+              <a href=""><img src="images/client-1.png" alt="" /></a>
+            </li>
+            <li>
+              <a href=""><img src="images/client-2.png" alt="" /></a>
+            </li>
+            <li>
+              <a href=""><img src="images/client-3.png" alt="" /></a>
+            </li>
+            <li>
+              <a href=""><img src="images/client-4.png" alt="" /></a>
+            </li>
+            <li>
+              <a href=""><img src="images/client-5.png" alt="" /></a>
+            </li>
+            <li>
+              <a href=""><img src="images/client-6.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <!-- end clients -->
@@ -608,9 +597,9 @@
     <!-- start footer -->
     <footer>
       <p>
-        &copy; Theme by
+        &copy; Designed
         <a href="https://www.graphberry.com" target="_blank">GraphBerry.com</a>
-        2014 All rights reserved
+        coded with <span class="heart">&hearts;</span> by Me
       </p>
       <div class="social">
         <i class="fab fa-facebook-f"></i>

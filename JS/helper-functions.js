@@ -12,4 +12,10 @@ function getByData(dataName = "") {
     throw "Please enter a String as an data name";
   return document.querySelector(`[data-${dataName}]`);
 }
-export { getById, getByDataAll, getByData };
+function activeThis(array, current, className) {
+  array.forEach((item) => {
+    item.classList.remove(className);
+  });
+  current.classList.add(className);
+}
+export { getById, getByDataAll, getByData, activeThis };
