@@ -53,9 +53,10 @@ img {
   }
 }
 /* End container */
-/* Start  component */
 
-/* start main heading */
+/* Start  component >>*/
+
+/* start main heading> */
 .main-heading {
   margin-bottom: 50px;
   text-align: center;
@@ -89,9 +90,9 @@ img {
   margin: 0 auto;
   line-height: 1.5;
 }
-/* End Main heading */
+/* <<End Main heading */
 
-/* Start Side heading */
+/* Start Side heading>> */
 .side-heading {
   text-align: center;
   color: white;
@@ -107,8 +108,9 @@ img {
   line-height: 1.5;
   font-size: 1.1em;
 }
-/* End Side heading */
-/* start special button */
+/* <<End Side heading */
+
+/* start special button>> */
 .special-button {
   border: none;
   background-color: var(--main-color);
@@ -120,8 +122,51 @@ img {
 .special-button:hover {
   outline-offset: 5px;
 }
-/* end special button */
-/* End component */
+/* <<end special button */
+/* start special-navigation-btn >>*/
+.special-navigation-btn {
+  position: relative;
+  display: inline-block;
+  background-color: var(--main-color);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.special-navigation-btn i {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: var(--normal-motion) ease-out;
+  top: var(--top);
+}
+
+.special-navigation-btn i:first-child {
+  transition-duration: calc(var(--normal-motion) + 100ms);
+}
+.special-navigation-btn i:nth-child(2) {
+  --top: -100%;
+}
+.special-navigation-btn i:nth-child(3) {
+  --top: -200%;
+  transition-delay: 200ms;
+}
+.special-navigation-btn i:last-child {
+  --top: -250%;
+  transition-delay: 200ms;
+}
+.special-navigation-btn:hover i:last-child {
+  top: 0;
+}
+
+/* <<end special-navigation-btn */
+
+/* <<End component */
+
 /* End global Rules */
 /*Start heading */
 header {
@@ -329,40 +374,18 @@ header .burger-shape span {
     font-size: 25px;
   }
 }
-.landing .scrool-shape {
-  width: 60px;
-  height: 60px;
-  background-color: var(--main-color);
+
+.landing .scroll-next-section {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
-  cursor: pointer;
-  overflow: hidden;
 }
-.landing .scrool-shape i {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-  transition: var(--normal-motion) ease-out;
+.landing .scroll-next-section i {
+  top: var(--top);
 }
-.landing .scrool-shape i:first-child {
-  top: -40px;
-}
-.landing .scrool-shape:hover i:first-child {
-  top: 80px;
-}
-.landing .scrool-shape:hover i:nth-child(2) {
-  top: 80px;
-}
-.landing .scrool-shape i:last-child {
-  top: -90px;
-}
-.landing .scrool-shape:hover i:last-child {
-  top: 50%;
+.landing .scroll-next-section:hover i:not(:last-child) {
+  top: calc(var(--top, -200%) * -1);
 }
 /* End Landing page */
 /* start Services */
@@ -377,14 +400,14 @@ header .burger-shape span {
 .services .boxes-container .box {
   text-align: center;
 }
-.services .boxes-container .box > i {
-  font-size: 50px;
-  background-color: var(--main-color);
-  padding: 25px;
+.services .boxes-container .box > :first-child {
+  width: 120px;
+  height: 120px;
+  background: black;
   border-radius: 50%;
-  color: white;
-  margin-bottom: 20px;
-  text-shadow: 2px 1px mediumvioletred;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 .services .boxes-container .box .text h3 {
   font-size: 1.3em;
@@ -667,6 +690,8 @@ header .burger-shape span {
 }
 .about .container .content .box {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
 }
 @media (min-width: 991px) {
@@ -674,17 +699,17 @@ header .burger-shape span {
     flex-basis: calc(50% - 30px);
   }
 }
-.about .container .content .box i {
+.about .container .content .box > :first-child {
   background-color: var(--main-color);
-  height: fit-content;
-  padding: 15px;
+  background-color: black;
+  max-width: 70px;
+  height: 70px;
+  padding: 10px;
+  flex-basis: 70px;
   border-radius: 50%;
-  margin-right: 20px;
-  color: white;
-  font-size: 25px;
 }
-.about .container .content .box:first-child i {
-  font-weight: normal;
+.about .container .content .box .text{
+  width: calc(100% - 90px);
 }
 .about .container .content .box .text h5 {
   font-size: 1.2em;
@@ -695,6 +720,8 @@ header .burger-shape span {
 .about .container .content .box .text p {
   color: var(--side-color);
 }
+
+/* Start Team  */
 .team {
   padding: 30px 0 0;
 }
@@ -1017,65 +1044,41 @@ footer > p a {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-footer .social {
-  margin-top: 20px;
-}
-footer .social i {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin: 10px;
-  cursor: pointer;
-}
-footer .social i:hover {
-  background-color: purple;
-}
-footer .social i:first-of-type:hover {
-  background-color: #4267b2;
-}
-footer .social i:nth-of-type(2):hover {
-  background-color: #1da1f2;
-}
-footer .social i:last-of-type:hover {
-  background-color: red;
-}
-footer > a {
-  margin-top: 10px;
-  text-align: center;
-  padding: 25px;
-  display: inline-block;
-  cursor: pointer;
-  color: white;
-  font-size: 25px;
-  border: none;
-  background-color: var(--main-color);
-  position: relative;
-  overflow: hidden;
-}
-
-footer > a i {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: var(--fast-motion) linear;
-}
 footer .heart {
   color: #c0392b;
   font-size: 1.3rem;
 }
-footer > a i.second {
-  top: 60px;
+footer .social {
+  margin-top: 20px;
 }
-footer > a i.third {
-  top: 100px;
+footer .social a {
+  overflow: hidden;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  --social-bg: #000;
 }
-footer > a i.fourth {
-  top: 140px;
+footer .social a:hover {
+  background-color: var(--social-bg);
 }
-footer > a:hover i {
-  top: -40px;
+footer .social a:first-child {
+  --social-bg: #4267b2;
 }
-footer > a:hover i.fourth {
-  top: 50%;
+footer .social a:nth-child(2) {
+  --social-bg: #1da1f2;
+}
+footer .social a:last-of-type {
+  --social-bg: #333;
+}
+footer .scroll-top {
+  margin-top: 10px;
+}
+footer .scroll-top i {
+  top: calc(var(--top) * -1);
+}
+footer .scroll-top:hover i:not(:last-child) {
+  top: calc(var(--top, 200%));
 }
