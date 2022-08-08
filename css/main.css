@@ -9,6 +9,7 @@
 }
 html {
   scroll-behavior: smooth;
+  /* overflow: hidden; */
 }
 * {
   -moz-box-sizing: border-box;
@@ -24,6 +25,7 @@ body {
 }
 button {
   cursor: pointer;
+  /* width: 50000px; */
 }
 a {
   text-decoration: none;
@@ -173,7 +175,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   padding: 10px 0;
   z-index: 10;
   user-select: none;
@@ -308,7 +310,7 @@ header .burger-shape span {
 @media (max-width: 700px) {
   .landing .content [data-head-quote] {
     font-size: 2.3rem;
-    padding: 0;
+    padding: 0 20px;
   }
   .landing .content {
     min-height: 150px;
@@ -350,28 +352,29 @@ header .burger-shape span {
   --translate-x: 115px;
 }
 
-.landing .content > i {
+.landing .content .quote-navigation {
   --distance: 30px;
   display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 35px;
+  width: 80px;
   cursor: pointer;
 }
-.landing .container:hover .content > i {
+.landing .container:hover .content .quote-navigation {
   display: block;
 }
 .landing .content [data-next-quote] {
+  transform: scaleX(-1) translateY(-50%);
   right: var(--distance);
 }
 .landing .content [data-previous-quote] {
   left: var(--distance);
 }
 @media (max-width: 411px) {
-  .landing .content > i {
-    --distance: 15px;
-    font-size: 25px;
+  .landing .content .quote-navigation {
+    --distance: 5px;
+    width: 50px;
   }
 }
 
@@ -382,6 +385,7 @@ header .burger-shape span {
   transform: translateX(-50%);
 }
 .landing .scroll-next-section i {
+  transform: scaleY(-1);
   top: var(--top);
 }
 .landing .scroll-next-section:hover i:not(:last-child) {
@@ -708,7 +712,7 @@ header .burger-shape span {
   flex-basis: 70px;
   border-radius: 50%;
 }
-.about .container .content .box .text{
+.about .container .content .box .text {
   width: calc(100% - 90px);
 }
 .about .container .content .box .text h5 {
@@ -864,6 +868,7 @@ header .burger-shape span {
 @media (max-width: 767px) {
   .clients .content {
     --main-width: 350px;
+    max-width: 100%;
   }
 }
 .clients ul {

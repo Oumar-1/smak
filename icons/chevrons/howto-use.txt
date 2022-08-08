@@ -1,0 +1,1 @@
+use transform:scale(-1); to flipe the chevron
