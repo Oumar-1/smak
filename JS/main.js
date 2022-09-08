@@ -23,16 +23,16 @@ sectionsLinks.forEach((e) => {
 });
 
 // active menu depend on which section you on
-function activeMenu() {
+function activeMenu(arrayOfSections, linksToActive) {
   let position = window.scrollY;
-  sections.forEach((section) => {
+  arrayOfSections.forEach((section) => {
     if (
       position >= section.offsetTop &&
       position < section.offsetTop + section.offsetHeight
     ) {
       let currentLink = h_Functions.getByData(`section-link=${section.id}`);
       if (currentLink.classList.contains("active")) return;
-      h_Functions.activeThis(sectionsLinks, currentLink, "active");
+      h_Functions.activeThis(linksToActive, currentLink, "active");
     }
   });
 }
@@ -138,5 +138,5 @@ function filterPortfolio(current) {
 // all on scroll functions
 window.addEventListener("scroll", () => {
   shrinkNav(navBar);
-  activeMenu();
+  activeMenu(sections, sectionsLinks);
 });
